@@ -63,4 +63,13 @@ async def gasto_categoria(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # Arranque del bot
 if __name__ == '__main__':
-    app =
+    app = ApplicationBuilder().token(TOKEN).build()
+
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(CommandHandler("ingreso", ingreso))
+    app.add_handler(CommandHandler("gasto", gasto))
+    app.add_handler(CommandHandler("saldo", saldo))
+    app.add_handler(CommandHandler("gasto_categoria", gasto_categoria))
+
+    print("Bot iniciado...")
+    app.run_polling()
