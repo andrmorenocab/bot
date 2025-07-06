@@ -3,6 +3,8 @@ services:
     name: bot-finanzas
     env: python
     plan: free
-    buildCommand: ""
-    startCommand: python bot_finanzas.py
-    autoDeploy: true
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python bot_finanzas.py"
+    envVars:
+      - key: BOT_TOKEN
+        value:
