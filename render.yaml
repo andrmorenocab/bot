@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: bot-finanzas
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: python bot_finanzas.py
+    autoDeploy: true
